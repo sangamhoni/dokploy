@@ -30,15 +30,15 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const Schema = z.object({
-	name: z.string().min(1, {
+	name: z.string().trim().min(1, {
 		message: "Name is required",
 	}),
 	description: z.string().optional(),
-	ipAddress: z.string().min(1, {
+	ipAddress: z.string().trim().min(1, {
 		message: "IP Address is required",
 	}),
 	port: z.number().optional(),
-	username: z.string().optional(),
+	username: z.string().trim().optional(),
 	sshKeyId: z.string().min(1, {
 		message: "SSH Key is required",
 	}),
